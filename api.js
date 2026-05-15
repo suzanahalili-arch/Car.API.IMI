@@ -1,16 +1,26 @@
-const fs = require('fs');
+# API - Menaxhim Makinash
 
-function getCars() {
-  const data = fs.readFileSync('data.json');
-  return JSON.parse(data);
+Ky është dokumentimi i API për sistemin e menaxhimit të makinave.
+
+## GET /cars
+Kthen listën e makinave.
+
+Shembull përgjigjeje:
+[
+  {
+    "id": 1,
+    "model": "Audi A4",
+    "year": 2018,
+    "price": 15000
+  }
+]
+
+## POST /cars
+Shton një makinë të re.
+
+Body:
+{
+  "model": "Emri Modelit",
+  "year": 2020,
+  "price": 10000
 }
-
-function addCar(car) {
-  const data = getCars();
-  car.id = data.length + 1;
-  data.push(car);
-  fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
-}
-
-console.log("Lista e makinave:");
-console.log(getCars());
