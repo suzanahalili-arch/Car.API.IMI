@@ -4,5 +4,11 @@
     "model": "Audi A4",
     "year": 2018,
     "price": 15000
+  },
+  {
+    "id": 2,
+    "model": "BMW 320",
+    "year": 2019,
+    "price": 18000
   }
 ]
